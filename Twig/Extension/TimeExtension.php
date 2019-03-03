@@ -58,7 +58,13 @@ class TimeExtension extends \Twig_Extension
         );
     }
     
-    public function diffmax($maxDiff = null, $maxDiffUnit = 'day', $dateFormat = 'd/m/Y')
+    /**
+     * @param $date \DateTime first argument, the value we want to display
+     * @param null $maxDiff
+     * @param string $dateFormat
+     * @param string $maxDiffUnit
+     */
+    public function diffmax($date, $maxDiff = null, $dateFormat = 'd/m/Y', $maxDiffUnit = 'day')
     {
         $this->helper->setMaxDiff($maxDiff);
         $this->helper->setMaxDiffUnit($maxDiffUnit);
